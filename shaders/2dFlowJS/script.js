@@ -19,7 +19,7 @@ function hpPt(b1, b2) {
   return pt;
 }
 
-function checkCF(flow, CF) {
+function checkCF(flow) {
   console.log('checkPeriodSnap called, flow:', flow, 'p1:', p1);
   if (p1 === null) { return; }
   if (flow !== 0) { return; }
@@ -117,7 +117,7 @@ export function onFrame(engine, time, deltaTime, frame) {
   const mb2 = math.multiply(m, b2);
 
   [b1, b2] = lagrangeGauss(mb1, mb2);
-  checkCF(flow,CF);
+  checkCF(flow);
 
   engine.setUniformValue('uLattice', [b1[0], b1[1], b2[0], b2[1]]);
   engine.setUniformValue('uNewLattice', latticeSet);
