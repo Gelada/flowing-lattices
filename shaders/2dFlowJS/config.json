@@ -1,0 +1,53 @@
+{
+  "layout": "default",
+  "controls": true,
+  "textInputs": [
+    { "id": "cfPrefix", "label": "CF prefix",  "default": "" },
+    { "id": "cfPeriod", "label": "CF period",  "default": "1" }
+  ],
+  "buttons": [
+    { "label": "Set lattice", "action": "onSetLattice" }
+  ],
+  "buffers": {
+    "gridTrace": {},
+    "dotTrails": {}
+  },
+  "uniforms": {
+    "uScale": {
+      "type": "float",
+      "value": 30.0,
+      "min": 5.0,
+      "max": 100.0,
+      "step": 0.1,
+      "label": "Scale"
+    },
+    "uLattice": {
+      "type": "vec4",
+      "value": [1.0, 0, 0, 1.0],
+      "hidden": true
+    },
+    "uSpeed": {
+      "type": "float",
+      "value": 10.0,
+      "min": -1.0,
+      "max": 1.0,
+      "step": 0.01,
+      "label": "Speed"
+    },
+    "uFlow": {
+      "type": "int",
+      "value": 0,
+      "min": 0,
+      "max": 2,
+      "step": 1,
+      "hidden": true,
+      "label": "Flow",
+      "options": ["Geodesic", "Horocyclic vertical", "Horocyclic horizontal"]
+    },
+    "uNewLattice": {
+      "type": "bool",
+      "value": false,
+      "hidden": true
+    }
+  }
+}

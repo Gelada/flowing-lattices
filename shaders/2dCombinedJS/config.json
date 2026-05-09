@@ -1,0 +1,53 @@
+{
+  "views": ["2dFlowJS", "2dHalfplaneJS"],
+  "layout": "split",
+  "controls": true,
+  "patch": { "left": "0", "top": "25%", "width": "100%", "height": "50%" },
+  "textInputs": [
+    { "id": "cfPrefix", "label": "CF prefix",  "default": "" },
+    { "id": "cfPeriod", "label": "CF period",  "default": "1" }
+  ],
+  "buttons": [
+    { "label": "Set lattice", "action": "onSetLattice" }
+  ],
+  "uniforms": {
+    "uLattice": {
+      "type": "vec4",
+      "value": [1.0, 0.0, 0.0, 1.0],
+      "hidden": true
+    },
+    "uSpeed": {
+      "type": "float",
+      "value": 0.15,
+      "min": -1.0,
+      "max": 1.0,
+      "step": 0.01,
+      "label": "Speed"
+    },
+    "uFlow": {
+      "type": "int",
+      "value": 0,
+      "min": 0,
+      "max": 2,
+      "step": 1,
+      "hidden": true,
+      "label": "Flow",
+      "options": ["Geodesic", "Horocyclic vertical", "Horocyclic horizontal"]
+    },
+    "uCell": {
+      "type": "int",
+      "value": 2,
+      "min": 0,
+      "max": 2,
+      "step": 1,
+      "hidden": true,
+      "label": "Cell",
+      "options": ["Unit cell", "Series cell", "Whole plane"]
+    },
+    "uNewLattice": {
+      "type": "bool",
+      "value": false,
+      "hidden": true
+    }
+  }
+}
