@@ -1,4 +1,4 @@
-import * as math from 'https://cdn.jsdelivr.net/npm/mathjs@13/+esm';
+import * as math from 'mathjs';
 import * as cfUtils from '../shared/cf_utils.js';
 
 let b1 = [1, 1.618033988749895];

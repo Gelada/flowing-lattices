@@ -51,14 +51,16 @@ export default defineConfig({
   },
   build: {
     outDir: `dist/${shaderName}`,
+    ...(useBuildEntry ? {
+      lib: {
+        entry: './_build-entry.js',
+        formats: ['es'],
+        fileName: () => 'main.js',
+      },
+    } : {}),
     rollupOptions: {
-      // In build mode, use the generated JS entry directly (produces an ES module).
-      // In dev/other mode, fall back to default index.html entry.
-      ...(useBuildEntry ? { input: './_build-entry.js' } : {}),
       output: {
-        format: 'es',
         inlineDynamicImports: true,
-        entryFileNames: 'main.js',
         assetFileNames: (assetInfo) => {
           const name = assetInfo.name || '';
           if (/\.(jpg|jpeg|png|gif|webp|bmp|svg)$/i.test(name)) {

@@ -8,6 +8,7 @@
     "list": "shader list"
   },
   "dependencies": {
+    "mathjs": "^15.2.0",
     "shader-sandbox": "^0.2.1",
     "vite": "^5.0.0",
     "vite-plugin-css-injected-by-js": "^3.5.0"
